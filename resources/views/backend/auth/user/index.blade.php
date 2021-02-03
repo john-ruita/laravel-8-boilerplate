@@ -15,8 +15,8 @@
         @if ($logged_in_user->hasAllAccess())
             <x-slot name="headerActions">
                 <x-utils.link
-                    icon="c-icon cil-plus"
-                    class="card-header-action"
+                    icon="fas fa-plus-circle"
+                    class="btn btn-success btn-sm"
                     :href="route('admin.auth.user.create')"
                     :text="__('Create User')"
                 />

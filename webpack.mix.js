@@ -16,7 +16,7 @@ mix.setPublicPath('public')
     .sass('resources/sass/frontend/app.scss', 'css/frontend.css')
     .sass('resources/sass/backend/app.scss', 'css/backend.css')
     .js('resources/js/frontend/app.js', 'js/frontend.js')
-    .js('resources/js/backend/app.js', 'js/backend.js')
+    .js(['resources/js/backend/before.js', 'resources/js/backend/app.js'], 'js/backend.js')
     .extract([
         'alpinejs',
         'jquery',

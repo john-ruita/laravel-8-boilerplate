@@ -14,28 +14,38 @@
     <livewire:styles />
     @stack('after-styles')
 </head>
-<body class="c-app">
+<body class="hold-transition sidebar-mini">
+@include('backend.includes.header')
     @include('backend.includes.sidebar')
 
-    <div class="c-wrapper c-fixed-components">
-        @include('backend.includes.header')
-        @include('includes.partials.read-only')
-        @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
-
-        <div class="c-body">
-            <main class="c-main">
+    <div class="wrapper">
+        <div class="content-wrapper">
+            @include('includes.partials.read-only')
+            @include('includes.partials.logged-in-as')
+            @include('includes.partials.announcements')
+            <div class="content-header">
                 <div class="container-fluid">
-                    <div class="fade-in">
-                        @include('includes.partials.messages')
-                        @yield('content')
-                    </div><!--fade-in-->
-                </div><!--container-fluid-->
-            </main>
-        </div><!--c-body-->
-
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">@yield('title')</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            @include('backend.includes.partials.breadcrumbs')
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main class="content">
+            <div class="container-fluid">
+                <div class="fade-in">
+                    @include('includes.partials.messages')
+                    @yield('content')
+                </div>
+            </div>
+        </main>
+        </div>
         @include('backend.includes.footer')
-    </div><!--c-wrapper-->
+    </div>
 
     @stack('before-scripts')
     <script src="{{ mix('js/manifest.js') }}"></script>

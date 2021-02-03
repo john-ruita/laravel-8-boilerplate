@@ -11,7 +11,7 @@
         <x-slot name="headerActions">
             <x-utils.link
                 icon="c-icon cil-plus"
-                class="card-header-action"
+                class="btn btn-success btn-sm"
                 :href="route('admin.auth.role.create')"
                 :text="__('Create Role')"
             />
