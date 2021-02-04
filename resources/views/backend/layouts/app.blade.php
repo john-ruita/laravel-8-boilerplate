@@ -14,11 +14,10 @@
     <livewire:styles />
     @stack('after-styles')
 </head>
-<body class="hold-transition sidebar-mini">
-@include('backend.includes.header')
-    @include('backend.includes.sidebar')
-
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
+        @include('backend.includes.header')
+        @include('backend.includes.sidebar')
         <div class="content-wrapper">
             @include('includes.partials.read-only')
             @include('includes.partials.logged-in-as')
@@ -46,7 +45,6 @@
         </div>
         @include('backend.includes.footer')
     </div>
-
     @stack('before-scripts')
     <script src="{{ mix('js/manifest.js') }}"></script>
     <script src="{{ mix('js/vendor.js') }}"></script>

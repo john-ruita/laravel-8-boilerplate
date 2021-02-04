@@ -21,7 +21,8 @@
                     :href="route('admin.dashboard')"
                     :active="activeClass(Route::is('admin.dashboard'), 'active')"
                     icon="nav-icon fas fa-tachometer-alt"
-                    :text="__('Dashboard')" />
+                    :text="__('Dashboard')"
+                    :sidebar="true" />
             </li>
             @if (
                 $logged_in_user->hasAllAccess() ||
@@ -42,7 +43,8 @@
                         icon="nav-icon fas fa-users"
                         class="nav-link"
                         :active="activeClass(Route::is('admin.auth.user.*') || Route::is('admin.auth.role.*'))"
-                        :text="__('Access')" />
+                        :text="__('Access')"
+                        :sidebar="true" />
 
                     <ul class="nav nav-treeview" style="display: {{ activeClass(Route::is('admin.auth.user.*') || Route::is('admin.auth.role.*'), 'block', 'none') }};">
                         @if (
@@ -62,7 +64,8 @@
                                     class="nav-link"
                                     :text="__('User Management')"
                                     :active="activeClass(Route::is('admin.auth.user.*'), 'active')"
-                                    icon="nav-icon fas fa-circle" />
+                                    icon="nav-icon fas fa-circle"
+                                    :sidebar="true" />
                             </li>
                         @endif
 
@@ -73,7 +76,8 @@
                                     class="nav-link"
                                     :text="__('Role Management')"
                                     :active="activeClass(Route::is('admin.auth.role.*'), 'active')"
-                                    icon="nav-icon fas fa-circle" />
+                                    icon="nav-icon fas fa-circle"
+                                    :sidebar="true" />
                             </li>
                         @endif
                     </ul>
@@ -87,7 +91,8 @@
                         icon="nav-icon fas fa-clipboard"
                         class="nav-link"
                         :active="activeClass(Route::is('log-viewer::dashboard') || Route::is('log-viewer::logs.*'))"
-                        :text="__('Logs')" />
+                        :text="__('Logs')"
+                        :sidebar="true" />
 
                     <ul class="nav nav-treeview" style="display: {{ activeClass(Route::is('log-viewer::dashboard') || Route::is('log-viewer::logs.*'), 'block', 'none') }};">
                         <li class="nav-item">
@@ -96,7 +101,8 @@
                                 class="nav-link"
                                 :text="__('Dashboard')"
                                 :active="activeClass(Route::is('log-viewer::dashboard'))"
-                                icon="nav-icon fas fa-circle"/>
+                                icon="nav-icon fas fa-circle"
+                                :sidebar="true"/>
                         </li>
                         <li class="nav-item">
                             <x-utils.link
@@ -104,7 +110,8 @@
                                 class="nav-link"
                                 :text="__('Logs')"
                                 :active="activeClass(Route::is('log-viewer::logs.*'))"
-                                icon="nav-icon fas fa-circle"/>
+                                icon="nav-icon fas fa-circle"
+                                :sidebar="true"/>
                         </li>
                     </ul>
                 </li>
